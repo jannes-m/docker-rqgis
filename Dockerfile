@@ -8,7 +8,11 @@ RUN apt-get install -y gpg && \
   gpg --export --armor --no-tty --yes CAEB3DC3BDF7FB45 | apt-key add - && \
   apt-get update -y &&  \
   apt-get install -qqy --no-install-recommends --fix-missing \
-  qgis python-qgis qgis-plugin-grass xvfb python-pip \
+  qgis \
+  python-qgis \
+  qgis-plugin-grass \
+  xvfb \
+  python-pip \
   xserver-xephyr \
   vnc4server && \
   pip install pyvirtualdisplay
