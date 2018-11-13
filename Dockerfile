@@ -17,4 +17,4 @@ RUN apt-get install -y gpg && \
   vnc4server && \
   pip install pyvirtualdisplay
 
-ENV DISPLAY=:99
+
