@@ -9,17 +9,17 @@ RUN apt-get install -y gpg && \
   gpg --export --armor --no-tty --yes CAEB3DC3BDF7FB45 | apt-key add - && \
   apt-get update && apt-get install -qqy --no-install-recommends --fix-missing \
   python-pip \
-  qgis \
   python-qgis \
+  qgis \
   qgis-plugin-grass \
-  # needed for virtual display
-  xvfb \
-  vnc4server \
   # install SAGA 2.3.1
-  saga && \ 
+  saga \
+  # install libs needed for virtual display
+  vnc4server \
+  xvfb && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*  && \
-  # needed for virtual display
+  # install virtual display for Python
   pip install pyvirtualdisplay
 
 
