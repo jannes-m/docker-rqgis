@@ -15,7 +15,16 @@ knitr::opts_chunk$set(
 )
 ```
 
-### Run RStudio, RQGIS and QGIS in a Docker container
+### Run RStudio, RQGIS, geocompr and QGIS in a Docker container
+
+**Linux users**: Updating the Linux kernel to version 4.19 introduced an `dpkg`/`overlayfs` Docker issue.
+As pointed out by this [post](https://github.com/docker/for-linux/issues/480), you can make Docker work again with the updated Linux kernel when running the following command on your shell prior to any docker command:
+
+```{sh, eval=FALSE}
+echo N | sudo tee /sys/module/overlay/parameters/metacopy
+```
+
+Then we can clone the `docker-rqgis` repository and build the corresponding image:
 
 ```{sh, eval=FALSE}
 # clone the repository
@@ -26,7 +35,7 @@ cd docker-rqgis
 sudo docker build -t rqgis .  
 ```
 
-Then you can start R either from the Shell...
+Now you can start R either from the Shell...
 
 ```{r, eval=FALSE}
 # start the container from the shell
@@ -44,7 +53,7 @@ sudo docker run -e PASSWORD=pass -p 8787:8787 rqgis
 
 Open [http://localhost:8787](http://localhost:8787) and use `rstudio` as usernmae and `pass` as password.
 Next, we have to attach the **RQGIS** package but before we can run any **RQGIS** commands, we have to make sure that PyQt will work even without a display.
-I found the solution for this [here](https://stackoverflow.com/questions/12462796/running-a-pyqt4-script-without-a-display).
+I found the solution for this [here](https://stackoverflow.com/questions/12462796/running-a-pyqt4-script-without-a-display) and [here](https://gis.stackexchange.com/questions/258998/pyqgis-problem-with-gui-on-linux).
 
 ```{r, eval=FALSE}
 library("RQGIS")
@@ -74,5 +83,5 @@ qgis_session_info()
 #> [1] "7.2.0"
 #> 
 #> $saga
-#> NULL
+#> [1] "2.3.1"
 ```
