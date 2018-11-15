@@ -51,7 +51,7 @@ R
 sudo docker run -e PASSWORD=pass -p 8787:8787 rqgis
 ```
 
-Open [http://localhost:8787](http://localhost:8787) and use `rstudio` as usernmae and `pass` as password.
+Open [http://localhost:8787](http://localhost:8787) and use `rstudio` as username and `pass` as password.
 Next, we have to attach the **RQGIS** package but before we can run any **RQGIS** commands, we have to make sure that PyQt will work even without a display.
 I found the solution for this [here](https://stackoverflow.com/questions/12462796/running-a-pyqt4-script-without-a-display) and [here](https://gis.stackexchange.com/questions/258998/pyqgis-problem-with-gui-on-linux).
 
