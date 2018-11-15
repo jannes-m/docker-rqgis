@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-### Run RStudio, RQGIS and QGIS in a Docker container
+### Run RStudio, RQGIS, geocompr and QGIS in a Docker container
 
 **Linux users**: Updating the Linux kernel to version 4.19 introduced an
 `dpkg`/`overlayfs` Docker issue. As pointed out by this
@@ -13,6 +13,9 @@ following command on your shell prior to any docker command:
 echo N | sudo tee /sys/module/overlay/parameters/metacopy
 ```
 
+Then we can clone the `docker-rqgis` repository and build the
+corresponding image:
+
 ``` sh
 # clone the repository
 git clone https://github.com/jannes-m/docker-rqgis.git
@@ -22,7 +25,7 @@ cd docker-rqgis
 sudo docker build -t rqgis .  
 ```
 
-Then you can start R either from the Shell…
+Now you can start R either from the Shell…
 
 ``` r
 # start the container from the shell
