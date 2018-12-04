@@ -1,6 +1,8 @@
 FROM robinlovelace/geocompr
 MAINTAINER Jannes Muenchow <malnamalja@gmx.de>
 
+# install RQGIS3 from github
+RUN R -e "remotes::install_github('jannes-m/RQGIS3')"
 RUN apt-get install -y gpg && \
   # install QGIS and dependencies
   sh -c 'echo "deb http://qgis.org/debian stretch main" >> /etc/apt/sources.list' && \
