@@ -41,11 +41,9 @@ sudo docker run -e PASSWORD=pass -p 8787:8787 rqgis3
 ```
 
 Open <http://localhost:8787> and use `rstudio` as username and `pass` as
-password. Next, we download and attach the **RQGIS3** package, and can
-then run **RQGIS3** commands, e.g.:
+password. Now, we can run **RQGIS3** commands, e.g.:
 
 ``` r
-devtools::install_github("jannes-m/RQGIS3")
 library("RQGIS3")
 qgis_session_info()
 #>Assuming that your root path is '/usr'!
@@ -56,7 +54,7 @@ qgis_session_info()
 #>[1] "7.2.0"
 #>
 #>$qgis_version
-#>[1] "3.4.1-Madeira"
+#>[1] "3.4.2-Madeira"
 #>
 #>$saga
 #>[1] "2.3.1"
