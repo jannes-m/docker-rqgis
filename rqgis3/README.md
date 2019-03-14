@@ -3,18 +3,7 @@
 
 ### Run RStudio, RQGIS, geocompr and QGIS in a Docker container
 
-**Linux users**: Updating the Linux kernel to version 4.19 introduced an
-`dpkg`/`overlayfs` Docker issue. As pointed out by this
-[post](https://github.com/docker/for-linux/issues/480), you can make
-Docker work again with the updated Linux kernel when running the
-following command on your shell prior to any docker command:
-
-``` sh
-echo N | sudo tee /sys/module/overlay/parameters/metacopy
-```
-
-Then we can clone the `docker-rqgis` repository and build the
-corresponding image:
+Clone the `docker-rqgis` repository and build the corresponding image:
 
 ``` sh
 # clone the repository
