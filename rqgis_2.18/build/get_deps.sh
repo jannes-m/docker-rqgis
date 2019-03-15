@@ -15,7 +15,9 @@ apt-get install -y --fix-missing bison ca-certificates cmake dh-python doxygen \
   python-pip python-psycopg2 python-pyspatialite python-qscintilla2 python-qt4 \
   python-qt4-dev python-qt4-sql python-sip python-sip-dev python-yaml \
   qt4-dev-tools qt4-doc-html spawn-fcgi txt2tags xauth xfonts-100dpi \
-  xfonts-75dpi xfonts-base xfonts-scalable xvfb cmake-curses-gui vnc4server saga
+  xfonts-75dpi xfonts-base xfonts-scalable xvfb cmake-curses-gui vnc4server \
+  # install also SAGA 2.3.1
+  saga
 
 pip install --upgrade pip==9.0.3
 pip install requests psycopg2 jinja2 pygments
