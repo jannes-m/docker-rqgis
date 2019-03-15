@@ -1,0 +1,65 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  #fig.path = "https://raw.githubusercontent.com/jannes-m/RQGIS/master/figures/",
+  fig.align = "center",
+  collapse = TRUE,
+  eval = FALSE,
+  comment = "#>",
+  cache = TRUE
+)
+```
+
+### Run RStudio, RQGIS, geocompr and QGIS3 LTR in a Docker container
+
+Clone the `docker-rqgis` repository and build the corresponding image:
+
+```{sh, eval=FALSE}
+# clone the repository
+git clone https://github.com/jannes-m/docker-rqgis.git
+# navigate to the cloned directory
+cd docker-rqgis/rqgis3_ltr
+# build the docker image, and name it rqgis3_ltr
+sudo docker build -t rqgis3_ltr .  
+```
+
+Now you can start R either from the Shell...
+
+```{r, eval=FALSE}
+# start the container from the shell
+docker run -it rqgis3_ltr /bin/bash
+# start R
+R
+```
+
+... or using RStudio
+
+
+```{r, eval=FALSE}
+sudo docker run -e PASSWORD=pass -p 8787:8787 rqgis3_ltr
+```
+
+Open [http://localhost:8787](http://localhost:8787) and use `rstudio` as username and `pass` as password.
+Now, we can run **RQGIS3** commands, e.g.:
+
+```{r, eval=FALSE}
+library("RQGIS3")
+qgis_session_info()
+#>Assuming that your root path is '/usr'!
+#>$gdal
+#>[1] "2.1.2"
+#>
+#>$grass7
+#>[1] "7.2.0"
+#>
+#>$qgis_version
+#>[1] "3.4.5-Madeira"
+#>
+#>$saga
+#>[1] "2.3.1"
+```
