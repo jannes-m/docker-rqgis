@@ -1,35 +1,28 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-### Run RStudio, RQGIS, geocompr and QGIS in a Docker container
+### Run RStudio, RQGIS, geocompr and the old QGIS LTR 2.18.26 in a Docker container
 
-**Linux users**: Updating the Linux kernel to version 4.19 introduced an
-`dpkg`/`overlayfs` Docker issue. As pointed out by this
-[post](https://github.com/docker/for-linux/issues/480), you can make
-Docker work again with the updated Linux kernel when running the
-following command on your shell prior to any docker command:
+**Acknowledgment**: The QGIS installation specified in the dockerfile
+used here is basically the work of @kartoza and can be found
+[here](https://github.com/kartoza/docker-qgis-desktop/tree/develop/2.18).
 
-``` sh
-echo N | sudo tee /sys/module/overlay/parameters/metacopy
-```
-
-Then we can clone the `docker-rqgis` repository and build the
-corresponding image:
+Clone the `docker-rqgis` repository and build the corresponding image:
 
 ``` sh
 # clone the repository
 git clone https://github.com/jannes-m/docker-rqgis.git
 # navigate to the cloned directory
-cd docker-rqgis/rqgis
-# build the docker image, and name it rqgis
-sudo docker build -t rqgis .  
+cd docker-rqgis/rqgis_2
+# build the docker image, and name it rqgis_2
+sudo docker build -t rqgis_2 .  
 ```
 
 Now you can start R either from the Shell…
 
 ``` r
 # start the container from the shell
-docker run -it rqgis /bin/bash
+docker run -it rqgis_2 /bin/bash
 # start R
 R
 ```
@@ -37,7 +30,7 @@ R
 … or using RStudio
 
 ``` r
-sudo docker run -e PASSWORD=pass -p 8787:8787 rqgis
+sudo docker run -e PASSWORD=pass -p 8787:8787 rqgis_2
 ```
 
 Open <http://localhost:8787> and use `rstudio` as username and `pass` as
@@ -51,7 +44,7 @@ library("RQGIS")
 qgis_session_info()
 #> Assuming that your root path is '/usr'!
 #> $qgis_version
-#> [1] "2.18.25"
+#> [1] "2.18.26"
 #> 
 #> $gdal
 #> [1] "2.1.2"
