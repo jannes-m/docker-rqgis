@@ -16,11 +16,6 @@ RUN chmod +x /build/scripts/get_deps.sh && \
   /bin/bash -c /build/scripts/make.sh && \
   /bin/bash -c /build/scripts/clean.sh
 
-# RUN chmod +x /build/scripts/install.sh
-#RUN chmod +x /build/scripts/get_deps.sh && \
-#    chmod +x /build/scripts/get_code.sh && \
-#    chmod +x /build/scripts/make.sh && \
-#    chmod +x /build/scripts/clean.sh
 
 
 
