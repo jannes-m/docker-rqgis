@@ -8,8 +8,8 @@ RUN apt-get update && \
   # apt-get install -y gpg software-properties-common && \
   apt-get install -y gpg && \
   # install QGIS and dependencies
-  sh -c 'echo "deb http://qgis.org/debian stretch main" >> /etc/apt/sources.list' && \
-  sh -c 'echo "deb-src http://qgis.org/debian stretch main" >> /etc/apt/sources.list' && \
+  sh -c 'echo "deb http://qgis.org/debian-ltr stretch main" >> /etc/apt/sources.list' && \
+  sh -c 'echo "deb-src http://qgis.org/debian-ltr stretch main" >> /etc/apt/sources.list' && \
   # installing ubuntugis-unstable did not work
   # sh -c 'echo "deb http://qgis.org/ubuntugis-ltr xenial main" >> /etc/apt/sources.list' && \
   # sh -c 'echo "deb-src http://qgis.org/ubuntugis-ltr xenial main" >> /etc/apt/sources.list' && \
