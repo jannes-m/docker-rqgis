@@ -7,7 +7,7 @@ RUN apt-get update && \
   # software-properties-common contains add-apt-repository needed for ubuntugis
   # apt-get install -y gpg software-properties-common && \
   apt-get install -y gpg && \
-  # install QGIS and dependencies
+    # install QGIS and dependencies
   sh -c 'echo "deb http://qgis.org/debian-ltr stretch main" >> /etc/apt/sources.list' && \
   sh -c 'echo "deb-src http://qgis.org/debian-ltr stretch main" >> /etc/apt/sources.list' && \
   # installing ubuntugis-unstable did not work
@@ -20,9 +20,9 @@ RUN apt-get update && \
   apt-get update && apt-get install -qqy --no-install-recommends --fix-missing \
   python3-pip \
   python3-setuptools \
-  python-qgis \
+  python3-qgis \
   qgis \
-  qgis-plugin-grass \
+  qgis-plugin-grass\
   # install SAGA 2.3.1
   saga \
   # install libs needed for virtual display
@@ -32,5 +32,6 @@ RUN apt-get update && \
   rm -rf /var/lib/apt/lists/*  && \
   # install virtual display for Python
   pip3 install pyvirtualdisplay
+
 
 # RUN git clone --progress https://github.com/jannes-m/RQGIS3 /home/rstudio/RQGIS3
