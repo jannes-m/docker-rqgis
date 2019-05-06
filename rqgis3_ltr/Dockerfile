@@ -7,7 +7,7 @@ RUN apt-get update && \
   # software-properties-common contains add-apt-repository needed for ubuntugis
   # apt-get install -y gpg software-properties-common && \
   apt-get install -y gpg && \
-    # install QGIS and dependencies
+  # install QGIS and dependencies
   sh -c 'echo "deb http://qgis.org/debian-ltr stretch main" >> /etc/apt/sources.list' && \
   sh -c 'echo "deb-src http://qgis.org/debian-ltr stretch main" >> /etc/apt/sources.list' && \
   # installing ubuntugis-unstable did not work
