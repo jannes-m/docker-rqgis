@@ -15,8 +15,8 @@ RUN apt-get update && \
   # sh -c 'echo "deb-src http://qgis.org/ubuntugis-ltr xenial main" >> /etc/apt/sources.list' && \
   # sh -c 'echo "deb http://ppa.launchpad.net/ubuntugis/ubuntugis-unstable/ubuntu xenial main" >> /etc/apt/sources.list' && \
   # add-apt-repository ppa:ubuntugis/ubuntugis-unstable && \
-  wget -O - https://qgis.org/downloads/qgis-2017.gpg.key | gpg --no-tty --import && \
-  gpg --export --armor --no-tty --yes CAEB3DC3BDF7FB45 | apt-key add - && \
+  wget -O - https://qgis.org/downloads/qgis-2019.gpg.key | gpg --no-tty --import && \
+  gpg --export --armor --no-tty --yes 51F523511C7028C3 | apt-key add - && \
   apt-get update && apt-get install -qqy --no-install-recommends --fix-missing \
   python3-pip \
   python3-setuptools \
