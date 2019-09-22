@@ -1,5 +1,6 @@
-FROM robinlovelace/geocompr
-MAINTAINER Jannes Muenchow <malnamalja@gmx.de>
+FROM rocker/geospatial
+RUN R -e "remotes::install_github('r-spatial/lwgeom')"
+RUN R -e "remotes::install_github('geocompr/geocompkg')"
 
 # install RQGIS from github (pyvirtualdisplay)
 RUN R -e "remotes::install_github('jannes-m/RQGIS')"
